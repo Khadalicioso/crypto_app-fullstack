@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto App</title>
+    <title>CryptoCosmos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body id="dark-theme">
     <div class="main">
         <div class="global">
-            <p>Coins: <b id="coins-count">14973</b></p>
-            <p>Exchanges: <b id="exchanges-count">1164</b></p>
-            <p>Market Cap: <span><b id="marketCap">$2.297T</b></span><span id="marketCapChange">-4.9% <i class="ri-arrow-down-s-fill"></i></span></p>
-            <p>24H Vol: <b id="volume">$109.452B</b></p>
-            <p>Dominance: <b id="dominance">BTC 53.0% - ETH 15.6%</b></p>
+            <p>Coins: <b id="coins-count"></b></p>
+            <p>Exchanges: <b id="exchanges-count"></b></p>
+            <p>Market Cap: <span><b id="marketCap"></b></span> <span id="marketCapChange"><i class="ri-arrow-down-s-fill"></i></span></p>
+            <p>24H Vol: <b id="volume"></b></p>
+            <p>Dominance: <b id="dominance"></b></p>
         </div>
         <nav>
             <div class="left-section">
@@ -228,7 +228,7 @@
                 <div class="error-message" id="asset-list-error">API limit reached. Please try again later.</div>
              </div>
              <div class="tab-content" id="tab2">
-                <div id="exchange-list" style="display: none;">
+                <div id="exchange-list">
                     <table>
                         <thead>
                             <tr>
@@ -298,7 +298,7 @@
                 <div class="error-message" id="exchange-list-error">API limit reached. Please try again later.</div>
              </div>
              <div class="tab-content" id="tab3">
-                <div id="category-list" style="display: none;">
+                <div id="category-list">
                     <table>
                         <thead>
                             <tr>
@@ -350,7 +350,7 @@
                 <div class="error-message" id="category-list-error">API limit reached. Please try again later.</div>
              </div>
              <div class="tab-content" id="tab4">
-                <div id="company-list" style="display: none;">
+                <div id="company-list">
                     <table>
                         <thead>
                             <tr>
@@ -413,5 +413,8 @@
         </div>
     </footer>
     <button onclick="scrollTOTop()" id="scrollTop"><i class="ri-arrow-up-s-line"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/global.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
