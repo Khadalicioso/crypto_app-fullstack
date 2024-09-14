@@ -50,20 +50,12 @@ div::-webkit-scrollbar{
 
 div::-webkit-scrollbar-track{
     border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 
 div::-webkit-scrollbar-thumb{
     background-color: var(--background-color-secondary);
     border-radius: 12px;
     width: 20%;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 
 .red{
@@ -91,35 +83,23 @@ img{
     object-fit: cover;
 }
 
-table tr td img{
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
-    margin-right: 6px;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+table {
+    overflow: scroll;
+}
+
+table tr td{
+    white-space: nowrap;
 }
 
 table tr td:first-child{
     border-radius: 12px 0 0 12px;
-    -webkit-border-radius: 12px 0 0 12px;
-    -moz-border-radius: 12px 0 0 12px;
-    -ms-border-radius: 12px 0 0 12px;
-    -o-border-radius: 12px 0 0 12px;
 }
 
 table tr td:last-child{
     border-radius: 0 12px 12px 0;
-    -webkit-border-radius: 0 12px 12px 0;
-    -moz-border-radius: 0 12px 12px 0;
-    -ms-border-radius: 0 12px 12px 0;
-    -o-border-radius: 0 12px 12px 0;
 }
 
-table tr td.ranks{
+table tr td.rank{
     padding-left: 10px;
 }
 
@@ -130,16 +110,33 @@ table tr td.name-column{
     padding-right: 30px;
 }
 
+table tr td img{
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 6px;
+    border-radius: 12px;
+}
+
+.table-fixed-column{
+    background: var(--background-color-primary);
+    position: sticky;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+table thead tr:hover {
+    background: transparent !important;
+    cursor: unset !important;
+}
+
 body{
     background: var(--background-color);
     display: flex;
     flex-direction: column;
     gap: 40px;
     transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
 }
 
 .main{
@@ -173,7 +170,8 @@ nav{
     border-bottom: 1px solid var(--border-color);
 }
 
-nav .left-section, nav .right-section{
+nav .left-section,
+nav .right-section{
     display: flex;
     align-items: center;
     gap: 40px;
@@ -195,17 +193,10 @@ nav .left-section .nav-links a{
     border-radius: 12px;
     color: var(--text-secondary);
     transition: all 0.3s ease;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
 }
 
-nav .left-section .nav-links a.active, nav .left-section .nav-links a:hover{
+nav .left-section .nav-links a.active,
+nav .left-section .nav-links a:hover{
     background: var(--background-color-secondary);
     color: var(--color-white);
 }
@@ -222,10 +213,6 @@ nav .right-section .search{
     padding: 0 10px;
     border-radius: 12px;
     width: 100%;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 
 nav .right-section .search input{
@@ -235,7 +222,8 @@ nav .right-section .search input{
     font-size: 14px;
 }
 
-nav .right-section .search input::placeholder, nav .right-section .search i{
+nav .right-section .search input::placeholder,
+nav .right-section .search i{
     color: var(--text-secondary);
 }
 
@@ -247,30 +235,14 @@ nav .right-section > i{
     font-size: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
 }
 
 nav .right-section > i.ri-sun-line{
     transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
 }
 
 nav .right-section > i.ri-moon-line{
     transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
 }
 
 .trending{
@@ -279,7 +251,8 @@ nav .right-section > i.ri-moon-line{
     justify-content: space-between;
 }
 
-.trending .coins-wrapper, .trending .nfts-wrapper{
+.trending .coins-wrapper,
+.trending .nfts-wrapper{
     width: 49%;
 }
 
@@ -290,23 +263,24 @@ nav .right-section > i.ri-moon-line{
     margin-bottom: 20px;
 }
 
-.trending .coins-wrapper .container, .trending .nfts-wrapper .container{
+.trending .coins-wrapper .container,
+.trending .nfts-wrapper .container{
     background: var(--background-color-primary);
     padding: 10px 20px;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 
-.trending table, .tab-container .tab-content table, .search-container .item table{
+.trending table,
+.tab-container .tab-content table,
+.search-container .item table {
     width: 100%;
     border-spacing: 0 20px;
 }
 
-.trending table th, .tab-container .tab-content table th, .search-container .item table th{
+.trending table th,
+.tab-container .tab-content table th,
+.search-container .item table th {
     color: var(--color-white);
     font-weight: 500;
     text-align: left;
@@ -314,47 +288,36 @@ nav .right-section > i.ri-moon-line{
     border-bottom: 1px solid var(--border-color);
 }
 
-.trending thead tr:hover{
-    background: transparent !important;
-    cursor: unset !important;
-}
-
-.trending .coins-wrapper table tr, .tab-container .tab-content #asset-list table tr, .search-container .item #coins-list table tr{
+.trending .coins-wrapper table tr,
+.tab-container .tab-content #asset-list table tr,
+.search-container .item #coins-list table tr {
     cursor: pointer;
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
 }
 
-.trending table tr td, .search-container .item table tr td{
+.trending table tr td,
+.search-container .item table tr td{
     padding: 5px;
 }
 
-.trending table tr td, .tab-container .tab-content table tr td, .search-container .item table tr td{
+.trending table tr td,
+.tab-container .tab-content table tr td,
+.search-container .item table tr td {
     color: var(--text-secondary);
     font-size: 13px;
 }
 
-.trending .coins-wrapper table tr:hover, .trending .coins-wrapper table tr:hover td .table-fixed-column, .tab-container .tab-content #asset-list table tr:hover, .tab-container .tab-content #asset-list table tr:hover td .table-fixed-column, .search-container .item #coins-list table tr:hover{
+.trending .coins-wrapper table tr:hover,
+.trending .coins-wrapper table tr:hover td.table-fixed-column,
+.tab-container .tab-content #asset-list table tr:hover,
+.tab-container .tab-content #asset-list table tr:hover td.table-fixed-column,
+.search-container .item #coins-list table tr:hover{
     background: var(--background-color-secondary);
 }
 
-.trending .coins-wrapper .container .table-fixed-column, .trending .nfts-wrapper .container .table-fixed-column{
+.trending .coins-wrapper .container .table-fixed-column,
+.trending .nfts-wrapper .container .table-fixed-column{
     left: -20px;
-}
-
-.table-fixed-column{
-    background: var(--background-color-primary);
-    position: sticky;
-    left: 0;
-    z-index: 100;
-    transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
 }
 
 .spinner{
@@ -365,30 +328,18 @@ nav .right-section > i.ri-moon-line{
     border-top: 6px solid var(--background-color-secondary);
     border-radius: 50%;
     margin: 10px auto 20px;
-    animation: spin 3s  linear infinite;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    -webkit-animation: spin 3s  linear infinite;
+    animation: spin 3s linear infinite;
 }
 
-@keyframes spin{
+@keyframes spin {
+
     0%{
         transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
     }
-
     100%{
         transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
     }
+
 }
 
 .error-message{
@@ -403,10 +354,6 @@ nav .right-section > i.ri-moon-line{
     background-color: var(--background-color-primary);
     padding: 20px;
     border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 
 .tab-container .tabs{
@@ -416,10 +363,6 @@ nav .right-section > i.ri-moon-line{
     padding: 10px 20px;
     border-radius: 12px;
     margin-bottom: 30px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 
 .tab-container .tabs .tab-button{
@@ -430,24 +373,17 @@ nav .right-section > i.ri-moon-line{
     color: var(--text-secondary);
     font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s ease ;
-    -webkit-transition: all 0.3s ease ;
-    -moz-transition: all 0.3s ease ;
-    -ms-transition: all 0.3s ease ;
-    -o-transition: all 0.3s ease ;
+    transition: all 0.3s ease;
 }
 
 .tab-container .tabs .tab-button i{
     font-size: 20px;
     color: var(--text-secondary);
     transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
 }
 
-.tab-container .tabs .tab-button.active, .tab-container .tabs .tab-button.active i{
+.tab-container .tabs .tab-button.active,
+.tab-container .tabs .tab-button.active i{
     color: var(--color-white);
 }
 
@@ -461,10 +397,6 @@ footer{
     border-radius: 12px 12px 0 0;
     border: 1px solid var(--border-color);
     margin: 0 auto;
-    -webkit-border-radius: 12px 12px 0 0;
-    -moz-border-radius: 12px 12px 0 0;
-    -ms-border-radius: 12px 12px 0 0;
-    -o-border-radius: 12px 12px 0 0;
 }
 
 footer p{
@@ -472,33 +404,31 @@ footer p{
     font-size: 13px;
 }
 
-footer .social-icons{
+footer .social-icons,
+.overlay .social-icons{
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-footer .social-icons a, #scrollTop{
+footer .social-icons a,
+#scrollTop,
+.overlay .social-icons a{
     background: var(--background-color);
     padding: 8px;
     border-radius: 12px;
     border: 1px solid transparent;
     transition: all 0.3s ease;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
 }
 
-footer .social-icons a:hover, #scrollTop:hover{
-     background: var(--links-color);
+footer .social-icons a:hover,
+#scrollTop:hover,
+.overlay .social-icons a:hover{
+    background: var(--links-color);
 }
 
-footer .social-icons a i{
+footer .social-icons a i,
+.overlay .social-icons a i{
     font-size: 26px;
     color: var(--color-white);
 }
@@ -525,15 +455,12 @@ footer .social-icons a i{
     font-weight: 500;
 }
 
-.chart-container, .search-container{
+.chart-container,
+.search-container {
     margin: 40px 40px 0;
     background: var(--background-color-primary);
     border-radius: 12px;
     height: 100vh;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 
 .chart-container{
@@ -569,10 +496,6 @@ footer .social-icons a i{
     padding: 40px;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
 }
 
 .about-container .image{
@@ -582,10 +505,6 @@ footer .social-icons a i{
 .about-container .image img{
     width: 75%;
     border-radius: 40px;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    -ms-border-radius: 40px;
-    -o-border-radius: 40px;
 }
 
 .about-container .info{
@@ -614,14 +533,6 @@ footer .social-icons a i{
     cursor: pointer;
     width: 120px;
     transition: all 0.3s ease;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
 }
 
 .about-container .info button:hover{
@@ -649,20 +560,22 @@ footer .social-icons a i{
     padding: 10px;
 }
 
-.chart-container .left-section .coin-info, .coin-container .right-section .status .container{
+.coin-container .left-section .coin-info,
+.coin-container .right-section .status .container{
     background: var(--background-color-primary);
     padding: 20px;
     border: 1px solid var(--border-color);
     border-radius: 12px;
 }
 
-.coin-container .left-section > h3, .coin-container .right-section .status > h3{
+.coin-container .left-section > h3,
+.coin-container .right-section .status > h3{
     color: var(--color-white);
     font-weight: 500;
     margin: 36px 0 20px;
 }
 
-.coin-container .left-section .coin-info .logo{
+.coin-container .left-section .coin-info .logo {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -692,13 +605,15 @@ footer .social-icons a i{
     border-radius: 12px;
 }
 
-.coin-container .left-section .coin-info .status, .coin-container .right-section .status{
+.coin-container .left-section .coin-info .status,
+.coin-container .right-section .status{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.coin-container .left-section .coin-info .status .item, .coin-container .right-section .status .container .item{
+.coin-container .left-section .coin-info .status .item,
+.coin-container .right-section .status .container .item{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -708,15 +623,17 @@ footer .social-icons a i{
 }
 
 .coin-container .right-section .status .container .item:first-child{
-    margin-left: 0;
+    margin-top: 0;
 }
 
-.coin-container .left-section .status .container .item:last-child, .coin-container .right-section .status ,.container .item:last-child{
+.coin-container .left-section .coin-info .status .item:last-child,
+.coin-container .right-section .status .container .item:last-child{
     border-bottom: none;
     padding-bottom: 0;
 }
 
-.coin-container .left-section .coin-info .status .item p.str, .coin-container .right-section .status .container .item p.str{
+.coin-container .left-section .coin-info .status .item p.str,
+.coin-container .right-section .status .container .item p.str{
     color: var(--text-secondary);
     font-size: 14px;
     width: 42%;
@@ -725,7 +642,8 @@ footer .social-icons a i{
     text-overflow: ellipsis;
 }
 
-.coin-container .left-section .coin-info .status .item p.num, .coin-container .right-section .status .container .item p.num{
+.coin-container .left-section .coin-info .status .item p.num,
+.coin-container .right-section .status .container .item p.num{
     color: var(--color-white);
     font-size: 14px;
     font-weight: 600;
@@ -735,7 +653,12 @@ footer .social-icons a i{
     width: 48%;
 }
 
-.coin-container .main-section .mini-chart .tradingview-widget-container{
+.coin-container .main-section .mini-chart{
+    width: 100%;
+    height: 100%;
+}
+
+.coin-container .main-section .mini-chart .tradingview-widget-container {
     padding: 0;
 }
 
@@ -755,7 +678,8 @@ footer .social-icons a i{
     gap: 10px;
 }
 
-.coin-container .right-section .links a, .coin-container .right-section .links p{
+.coin-container .right-section .links a,
+.coin-container .right-section .links p{
     color: var(--color-black);
     background: var(--links-color);
     font-size: 12px;
@@ -791,4 +715,317 @@ footer .social-icons a i{
 
 .coin-desc p a{
     color: var(--links-color);
+}
+
+#openMenu{
+    background: var(--background-color-secondary);
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: none;
+}
+
+.overlay{
+    position: fixed;
+    background: var(--background-color);
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.5s ease;
+}
+
+.overlay.show{
+    opacity: 1;
+    visibility: visible;
+}
+
+.overlay .nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.overlay .nav-links a{
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.overlay .nav-links a.active,
+.overlay .nav-links a:hover{
+    color: var(--links-color);
+}
+
+.overlay button#closeMenu{
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.overlay button#closeMenu i{
+    font-size: 34px;
+    transition: all 0.3s ease;
+}
+
+.overlay button#closeMenu:hover i{
+    color: var(--links-color);
+}
+
+
+@media screen and (max-width: 1400px) {
+
+    .coin-container{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .coin-container .left-section{
+        width: 38%;
+    }
+
+    .coin-container .main-section{
+        width: 59%;
+    }
+
+    .coin-container .right-section{
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .coin-container .right-section .status{
+        width: 33%;
+    }
+
+    .coin-container .right-section .status > h3,
+    .coin-container .right-section .status:first-child > h3{
+        margin: 30px 0 20px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    nav .right-section{
+        width: 40%;
+    }
+
+    .trending .coins-wrapper .container,
+    .trending .nfts-wrapper .container,
+    .tab-content #asset-list,
+    .tab-content #exchange-list{
+        overflow-x: scroll;
+    }
+
+    .trending table,
+    #asset-list table,
+    #exchange-list table{
+        width: 150%;
+    }
+
+    table tr td.name-column{
+        max-width: 160px;
+        padding-right: 50px;
+    }
+
+    footer{
+       width: 60%;
+    }
+
+    .about-container .image img{
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+
+    .global{
+        gap: 30px;
+    }
+
+    .global p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav .left-section{
+        gap: 20px;
+    }
+
+    .trending{
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    .trending .coins-wrapper,
+    .trending .nfts-wrapper{
+        width: 100%;
+    }
+
+    footer{
+        width: 100%;
+        padding: 16px 90px;
+    }
+
+    .tab-content #category-list,
+    .tab-content #company-list{
+        overflow-x: scroll;
+    }
+
+    .tab-content #category-list table,
+    .tab-content #company-list table{
+        width: 150%;
+    }
+
+    #asset-list table,
+    #exchange-list table{
+        width: 200%;
+    }
+
+    .search-container{
+        flex-wrap: wrap;
+    }
+
+    .search-container .item:nth-child(1),
+    .search-container .item:nth-child(2){
+        width: 48%;
+    }
+
+    .search-container .item:nth-child(3){
+        width: 100%;
+    }
+
+    .search-container .item:nth-child(3) h4{
+        margin: 10px 0 20px;
+        border-top: 1px dashed var(--border-color);
+        padding-top: 20px;
+    }
+
+    .about-container{
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .about-container .image{
+        text-align: center;
+    }
+
+    .about-container .image img{
+        width: 60%;
+    }
+
+    .coin-container .left-section{
+        width: 100%;
+    }
+
+    .coin-container .main-section{
+        width: 100%;
+        height: 50vh;
+    }
+
+    .coin-container .right-section{
+        flex-wrap: wrap;
+    }
+
+    .coin-container .right-section .status:first-child{
+        width: 100%;
+    }
+
+    .coin-container .right-section .status{
+        width: 48%;
+    }
+
+    .coin-container .right-section > h3{
+        margin-top: 10px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .global p:last-child{
+        display: none;
+    }
+
+    nav .right-section{
+        width: 65%;
+    }
+
+    nav .left-section{
+        gap: 10px;
+    }
+
+    nav .left-section .nav-links{
+        display: none;
+    }
+
+    #openMenu{
+        display: flex;
+    }
+
+    .tab-container .tabs{
+        flex-wrap: wrap;
+        gap: 10px 0;
+    }
+
+    .tab-container .tab-button{
+        width: 50%;
+    }
+
+    #asset-list table,
+    #exchange-list table,
+    .tab-content #category-list table{
+        width: 300%;
+    }
+
+    .tab-content #company-list table{
+        width: 250%;
+    }
+
+    .tab-content #company-list table tr td.name-column{
+        width: 120px;
+    }
+
+    footer{
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .chart-container{
+        height: 80vh;
+    }
+
+    .search-container .item:nth-child(1),
+    .search-container .item:nth-child(2){
+        width: 100%;
+    }
+
+    .search-container .item:not(:first-child) h4{
+        margin: 10px 0 20px;
+        border-top: 1px dashed var(--border-color);
+        padding-top: 20px;
+    }
+
+    .about-container .image img{
+        width: 100%;
+    }
+
+    .coin-container .right-section .status{
+        width: 100%;
+    }
+
 }
